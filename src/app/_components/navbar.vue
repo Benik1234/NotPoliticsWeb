@@ -1,37 +1,22 @@
 <template>
-    <div class="navbar--fixed">
-      <!-- Navbar for desktop -->
-      <nav class="desktop-navbar " v-if="!isDesktop">
+  <div class="navbar--fixed">
+    <nav class="mobile-navbar nav1" >
+      <span  class="not-politics">NotPolitics</span>
+      <div  @click="animateBox" class="menu btn15" :class="{ open: isOpen, disabled: isDivDisabled }">
+        <div class="icon"></div>
+      </div>
+      <div class="container" ref="box">
         <ul>
-          <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/about">About</router-link></li>
-          <li><router-link to="/">Services</router-link></li>
-          <li><router-link to="/">Contact</router-link></li>
+          <li ><router-link to="/"><a>Home</a></router-link></li>
+          <li><router-link to="/about"><a>About</a></router-link></li>
+          <li><router-link to="/"><a>Home</a></router-link></li>
+          <li><router-link to="/"><a>Home</a></router-link></li>
         </ul>
-      </nav>
-    </div>
-    <div class="navbar--fixed">
-        <nav class="mobile-navbar nav1" v-if="isDesktop">
-            <span  class="not-politics">NotPolitics</span>
-            
-            <div  @click="animateBox" class="menu btn15" :class="{ open: isOpen, disabled: isDivDisabled }">
-                <div class="icon"></div>
-            </div>
-            <div class="container" ref="box">
-                <ul>
-                <li ><router-link to="/"><a>Home</a></router-link></li>
-                <li><router-link to="/about"><a>About</a></router-link></li>
-                <li><router-link to="/"><a>Home</a></router-link></li>
-                <li><router-link to="/"><a>Home</a></router-link></li>
-            </ul>
-            </div>
-</nav>
-        
-    </div>
-
-  </template>
-  
-  <script>
+      </div>
+    </nav>
+  </div>
+</template>
+<script>
   import gsap from 'gsap';
   export default {
     data() {

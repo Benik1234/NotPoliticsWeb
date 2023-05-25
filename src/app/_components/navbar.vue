@@ -1,7 +1,7 @@
 <template>
     <div class="navbar--fixed">
       <!-- Navbar for desktop -->
-      <nav class="desktop-navbar " v-if="isDesktop">
+      <nav class="desktop-navbar " v-if="!isDesktop">
         <ul>
           <li><router-link to="/">Home</router-link></li>
           <li><router-link to="/about">About</router-link></li>
@@ -11,7 +11,7 @@
       </nav>
     </div>
     <div class="navbar--fixed">
-        <nav class="mobile-navbar nav1" v-if="!isDesktop">
+        <nav class="mobile-navbar nav1" v-if="isDesktop">
             <span  class="not-politics">NotPolitics</span>
             
             <div  @click="animateBox" class="menu btn15" :class="{ open: isOpen, disabled: isDivDisabled }">

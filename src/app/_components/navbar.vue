@@ -7,10 +7,10 @@
       </div>
       <div class="container" ref="box">
         <ul>
-          <li ><router-link to="/"><a>Home</a></router-link></li>
-          <li><router-link to="/about"><a>About</a></router-link></li>
-          <li><router-link to="/"><a>Home</a></router-link></li>
-          <li><router-link to="/"><a>Home</a></router-link></li>
+          <li ><router-link @click="animateBox" to="/"><a>Home</a></router-link></li>
+          <li><router-link @click="animateBox" to="/about"><a>About</a></router-link></li>
+          <li><router-link @click="animateBox" to="/"><a>Home</a></router-link></li>
+          <li><router-link @click="animateBox" to="/"><a>Home</a></router-link></li>
         </ul>
       </div>
     </nav>

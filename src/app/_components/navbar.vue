@@ -1,16 +1,16 @@
 <template>
-  <div class="navbar--fixed">
+  <div class="navbar--fixed " >
     <nav class="mobile-navbar nav1" >
       <span  class="not-politics">NotPolitics</span>
       <div  @click="animateBox" class="menu btn15" :class="{ open: isOpen, disabled: isDivDisabled }">
         <div class="icon"></div>
       </div>
-      <div class="container" ref="box">
+      <div class="container" ref="box" >
         <ul>
-          <li ><router-link @click="animateBox" to="/"><a>Home</a></router-link></li>
+          <li ><router-link @click="animateBox"   to="/"><a>Home</a></router-link></li>
           <li><router-link @click="animateBox" to="/about"><a>About</a></router-link></li>
           <li><router-link @click="animateBox" to="/"><a>Home</a></router-link></li>
-          <li><router-link @click="animateBox" to="/"><a>Home</a></router-link></li>
+          <li><router-link @click="animateBox"  to="/"><a>Home</a></router-link></li>
         </ul>
       </div>
     </nav>

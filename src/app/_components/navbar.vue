@@ -7,10 +7,10 @@
       </div>
       <div class="container" ref="box" >
         <ul>
-          <li ><router-link @click="animateBox"   to="/"><a>Home</a></router-link></li>
-          <li><router-link @click="animateBox" to="/about"><a>About</a></router-link></li>
-          <li><router-link @click="animateBox" to="/"><a>Home</a></router-link></li>
-          <li><router-link @click="animateBox"  to="/"><a>Home</a></router-link></li>
+          <li><router-link @click="animateBox" :class="{ 'disabled': menuDisabled }" to="/">Home</router-link></li>
+          <li><router-link @click="animateBox" :class="{ 'disabled': menuDisabled }" to="/about">About</router-link></li>
+          <li><router-link @click="animateBox" :class="{ 'disabled': menuDisabled }" to="/">Home</router-link></li>
+          <li><router-link @click="animateBox" :class="{ 'disabled': menuDisabled }" to="/">Home</router-link></li>
         </ul>
       </div>
     </nav>
@@ -23,7 +23,8 @@
       return {
         isDesktop: true,
         isOpen: false,
-        isDivDisabled:false
+        isDivDisabled:false,
+        menuDisabled: true
         
       };
     },
@@ -57,6 +58,7 @@
         },
 
         animateBox() {
+          this.menuDisabled= !this.menuDisabled
           this.isDivDisabled = true
           console.log(this.isDivDisabled)
         
@@ -109,16 +111,16 @@ $color: #b3e5fc;
 	
 }
 .disabled {
-  pointer-events: none;
+  pointer-events: none !important;
   
 }
 
 .nav1 ul{
     list-style-type: none
 }
-.nav1 ul li a{
+.nav1 ul li a {
 	color: #fafafa;
-	font-size: 2em;
+	font-size: 3em;
 	text-decoration: none;
 	font-weight: 500;
 	position: relative;
